@@ -20,19 +20,24 @@ import math
 # Follow up question - solve without division 
 
 def productWithoutCurrentValue(arr):
-    result = [1] * len(arr)
+    if arr == []:
+        return []
+    else:
+      result = [1] * len(arr)
 
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            if j != i:
-                result[j] = arr[i] * result[j]
-                
-    return result
+      for i in range(len(arr)):
+          for j in range(len(arr)):
+              if j != i:
+                  result[j] = arr[i] * result[j]
+                  
+      return result
     
 
     
 
 print(productWithoutCurrentValue([1, 2, 3, 4, 5]))
+print(productWithoutCurrentValue([]))
+print(productWithoutCurrentValue([1]))
 
 
     
