@@ -1,2 +1,3 @@
-# daily-coding-problem
-Daily coding problem for interview practice.
+# Daily Coding Problem
+
+My solutions for daily coding problems for interview practice from https://www.dailycodingproblem.com/
