@@ -14,5 +14,6 @@ def matchSumToTarget(inputArr, target):
 
 
 assert matchSumToTarget([10, 15, 3, 7], 17) == True
+assert matchSumToTarget([10 ** 20, 15, 10 ** 20, 7], 2 * (10 ** 20)) == True
 assert matchSumToTarget([10, 15, 3, 12], 17) == False
 assert matchSumToTarget([], 50) == False
