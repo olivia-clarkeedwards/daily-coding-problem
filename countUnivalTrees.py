@@ -5,33 +5,33 @@ class BinaryTreeNode:
         self.left = None
         self.right = None
 
-def buildBinaryTreeFromArray(treeArr, root = 0):
-    newNode = BinaryTreeNode(treeArr[root])
-    leftIndex = root * 2 + 1
-    rightIndex = root * 2 + 2
 
-    if  leftIndex < len(treeArr):
-        newNode.left = BinaryTreeNode(treeArr[leftIndex])
-        buildBinaryTreeFromArray(treeArr, leftIndex)
-    if rightIndex < len(treeArr):
-        newNode.right = BinaryTreeNode(treeArr[rightIndex])
-        buildBinaryTreeFromArray(treeArr, rightIndex)
-
-    return newNode
-
-
-def countUnivalTrees(root, count = 0):
-    if root.left.value != root.value or root.right.value != root.value:
-        print(count)
-    else:
-        print('unival')
-        
+def preOrderTraversal(root):
     
+    if root is None:
+        return 
+    
+    preOrderTraversal(root.left)
+    print(root.value)
+    preOrderTraversal(root.right)
+
     
 
-root = buildBinaryTreeFromArray([1,1,1,1,1,None,1])
+# Input: Integer array
+# Output: BinaryTreeNode (root)
 
-countUnivalTrees(root)
-        
+def buildBinaryTreeFromArray(treeArr, rootIndex = 0):
+    
+    if rootIndex > len(treeArr) - 1:
+        return None
+    
+    root = BinaryTreeNode(treeArr[rootIndex])
+    root.left = buildBinaryTreeFromArray(treeArr, rootIndex * 2 + 1)
+    root.right = buildBinaryTreeFromArray(treeArr, rootIndex * 2 + 2)
+
+    return root
 
 
+root = buildBinaryTreeFromArray([0, 1, 2, 3, 4, 5, 6])
+
+preOrderTraversal(root)
