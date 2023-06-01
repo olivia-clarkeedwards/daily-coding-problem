@@ -1,21 +1,9 @@
-
 class BinaryTreeNode:
     def __init__(self, value = None, left = None, right = None):
         self.value = value
         self.left = None
-        self.right = None
+        self.right = None 
 
-
-def preOrderTraversal(root):
-    
-    if root is None:
-        return 
-    
-    preOrderTraversal(root.left)
-    print(root.value)
-    preOrderTraversal(root.right)
-
-    
 
 # Input: Integer array
 # Output: BinaryTreeNode (root)
@@ -32,6 +20,23 @@ def buildBinaryTreeFromArray(treeArr, rootIndex = 0):
     return root
 
 
-root = buildBinaryTreeFromArray([0, 1, 2, 3, 4, 5, 6])
+def preOrderTraversal(root):
+    
+    if root is None:
+        return 
+    
+    preOrderTraversal(root.left)
+    print(root.value)
+    preOrderTraversal(root.right)
 
+
+def isUnivalTree(root):
+    #write my code here
+    
+    
+
+
+
+root = buildBinaryTreeFromArray([1, None])
 preOrderTraversal(root)
+print(isUnivalTree(root))
